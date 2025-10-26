@@ -1,5 +1,5 @@
 import React from 'react'
-import brandlogo from '../Assets/Brandlogo.png'
+import brandlogo from '../assets/brandlogo.png'
 import profileIcon from '../Assets/profile-icon.png'
 
 function Navbar() {
