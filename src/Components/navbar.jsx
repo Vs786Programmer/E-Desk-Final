@@ -1,6 +1,6 @@
 import React from 'react'
-import brandlogo from '../assets/brandlogo.png'
-import profileIcon from '../Assets/profile-icon.png'
+import brandlogo from '../assets/Brandlogo.png'
+import profileIcon from '../assets/profile-icon.png'
 
 function Navbar() {
   return (
