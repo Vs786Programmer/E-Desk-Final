@@ -5,44 +5,44 @@ import { MdOutlineLibraryBooks } from "react-icons/md";
 import { MdOutlineSchool } from "react-icons/md";
 import { MdOutlineGroup } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
+import { NavLink } from 'react-router-dom'
 
 function sidebar() {
   return (
-    <div className="w-64 h-[calc(100svh-5rem)] mt-5 flex flex-col justify-between">
+    <div className="w-70 h-[calc(100svh-5rem)] mt-5 flex flex-col justify-between">
       <div>
-        <div className="sidebar-button">
+        <NavLink to="/" className={({isActive}) => isActive ? "sidebar-button-active" : "sidebar-button"}>
           <GoHome className="h-7 w-auto" />
           Home
-        </div>
+        </NavLink>
         <div className="h-0.5 my-0.5  bg-gray-200"></div>
-        <div className="sidebar-button">
+        <NavLink to="/study-desk" className={({isActive}) => isActive ? "sidebar-button-active" : "sidebar-button"}>
           <LuLampDesk className="h-7 w-auto" />
           Study Desk
-        </div>
+        </NavLink>
         <div className="h-0.5 my-0.5  bg-gray-200"></div>
-        <div className="sidebar-button">
+        <NavLink to="/materials" className={({isActive}) => isActive ? "sidebar-button-active" : "sidebar-button"}>
           <MdOutlineLibraryBooks className="h-7 w-auto" />
           Materials
-        </div>
+        </NavLink>
         <div className="h-0.5 my-0.5  bg-gray-200"></div>
-        <div className="sidebar-button">
+        <NavLink to="/courses" className={({isActive}) => isActive ? "sidebar-button-active" : "sidebar-button"}>
           <MdOutlineSchool className="h-7 w-auto" />
           Courses
-        </div>
+        </NavLink>
         <div className="h-0.5 my-0.5  bg-gray-200"></div>
-        <div className="sidebar-button">
+        <NavLink to="/community" className={({isActive}) => isActive ? "sidebar-button-active" : "sidebar-button"}>
           <MdOutlineGroup className="h-7 w-auto" />
           Community
-        </div>
+        </NavLink>
         <div className="h-0.5 my-0.5  bg-gray-200"></div>
       </div>
 
-      <div >
-        <div className="sidebar-button">
+      <div>
+        <NavLink to="/settings" className={({isActive}) => isActive ? "sidebar-button-active" : "sidebar-button"}>
           <IoMdSettings className="h-7 w-auto" />
           Settings
-        </div>
-      
+        </NavLink>
       </div>
     </div>
   );

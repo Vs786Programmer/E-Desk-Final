@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
+
+
 /* in your styles.css or global.css */
 .sidebar-button {
-  @apply  p-3 flex items-center font-semibold text-xl gap-2 rounded-lg hover:bg-blue-600 transition;
+  @apply  p-3 flex items-center font-semibold text-xl gap-2 rounded-lg hover:bg-gray-100 transition;
+}
+.sidebar-button-active {
+  @apply bg-gray-100 transition p-3 flex items-center font-semibold text-xl gap-2;
+}
+
+.Dashboard {
+  @apply bg-gray-100 w-screen h-auto p-8 my-3 mr-10 inset-shadow-sm rounded-lg;
 }

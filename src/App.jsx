@@ -1,13 +1,13 @@
 import Navbar from "./Components/navbar";
 import Sidebar from "./Components/sidebar";
-import Dashboard from "./Components/Dashboard";
+import { Outlet } from 'react-router-dom'
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className="main flex"><Sidebar/><Dashboard/></div>
+      <div className="main flex"><Sidebar/><Outlet/></div>
       <SpeedInsights />
     </>
   );
