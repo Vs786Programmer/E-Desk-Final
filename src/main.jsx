@@ -8,13 +8,20 @@ import StudyDesk from './Components/StudyDesk'
 import Materials from './Components/Materials'
 import Courses from './Components/Courses'
 import Community from './Components/Community'
-import Settings from './Components/Settings'
+import Settings from './Components/Settings.jsx'
 import NotFound from './Components/NotFound'
+import Login from './Components/Login.jsx'
+import RequireAuth from './Components/RequireAuth'
+import { AuthProvider } from './context/AuthContext'
 
 const router = createBrowserRouter([
   {
+    path: '/login',
+    element: <Login />
+  },
+  {
     path: '/',
-    element: <App />,
+    element: <RequireAuth><App /></RequireAuth>,
     children: [
       { index: true, element: <Home /> },
       { path: 'study-desk', element: <StudyDesk /> },
@@ -29,6 +36,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
