@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../components/ui'
+import { Button } from '../Components/ui'
 
 export default function Courses() {
   return (
