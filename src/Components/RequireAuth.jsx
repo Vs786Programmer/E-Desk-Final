@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../hooks/AuthContext'
 
 export default function RequireAuth({ children }) {
   const { isAuthenticated } = useAuth()

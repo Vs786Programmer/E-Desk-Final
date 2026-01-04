@@ -1,0 +1,80 @@
+{
+  "name": "EDesk - Study with Pomodoro",
+  "short_name": "EDesk",
+  "description": "A comprehensive study app with Pomodoro timer, materials management, and community features",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0066cc",
+  "background_color": "#ffffff",
+  "categories": ["productivity", "education"],
+  "screenshots": [
+    {
+      "src": "/screenshots/screenshot-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/screenshot-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Pomodoro",
+      "short_name": "Pomodoro",
+      "description": "Start a study session with Pomodoro timer",
+      "url": "/?mode=pomodoro",
+      "icons": [
+        {
+          "src": "/shortcuts/pomodoro-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "View Materials",
+      "short_name": "Materials",
+      "description": "Access your study materials",
+      "url": "/materials",
+      "icons": [
+        {
+          "src": "/shortcuts/materials-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

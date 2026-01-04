@@ -1,9 +1,11 @@
 import React from 'react'
+import PomodoroTimer from './PomodoroTimer.jsx'
 
 function Home() {
   return (
     <div className="Dashboard">
-      hi bbye
+      <PomodoroTimer />
+    
     </div>
   )
 }

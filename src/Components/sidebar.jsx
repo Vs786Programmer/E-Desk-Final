@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom'
 
 function sidebar() {
   return (
-    <div className="w-70 h-[calc(100svh-5rem)] mt-5 flex flex-col justify-between">
+    <div className="w-70 h-[calc(100svh-5rem)] pt-5 flex flex-col justify-between bg-white">
       <div>
         <NavLink to="/" className={({isActive}) => isActive ? "sidebar-button-active" : "sidebar-button"}>
           <GoHome className="h-7 w-auto" />

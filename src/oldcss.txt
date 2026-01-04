@@ -1,0 +1,137 @@
+/* @tailwind base;
+@tailwind components; 
+@tailwind utilities;
+@reference "tailwindcss/utilities";
+
+/* Animation for PWA install prompt *//
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-slideUp {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+/* in your styles.css or global.css */
+/* original compact styles preserved while keeping the sliding animation layers */
+@layer components {
+/* INACTIVE BUTTON STATE (matches original: p-3, flex, items-center, gap-2, rounded-lg, text-xl, font-semibold, hover:bg-gray-100) */
+.sidebar-button {
+  @apply p-3 bg-transparent flex text-gray-700 hover:text-gray-900 hover:bg-gray-100 items-center gap-2 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 relative overflow-hidden transition-all duration-300 z-10;
+ 
+}
+
+/* Static base background layer (acts like ::after) */
+.sidebar-button::after {
+  content: '';
+  @apply absolute inset-0  bg-transparent z-[-2];
+}
+
+/* Sliding hover layer (acts like ::before) - starts at w-0 and expands to full width */
+.sidebar-button::before {
+  content: '';
+  @apply absolute left-0 top-0 h-full w-0  bg-gray-200 transition-all duration-300 z-[-1];
+}
+
+/* Expand sliding layer on hover (animated) */
+.sidebar-button:hover::before {
+  @apply w-full;
+}
+
+/* ACTIVE STATE (matches original active bg and layout) */
+.sidebar-button-active {
+  @apply p-3 flex shadow-sm items-center gap-2 text-xl font-semibold  bg-blue-500 text-white transition-all duration-300 z-10;
+  
+}
+
+/* Remove pseudo layers for active button to avoid double visuals */
+.sidebar-button-active::before,
+.sidebar-button-active::after {
+  content: none;
+}
+
+.Dashboard {
+  @apply bg-white sm:bg-gray-100 w-screen h-auto p-4 sm:p-6 lg:p-8 rounded-lg shadow-sm sm:shadow-md;
+}
+
+.regular-button {
+  @apply bg-blue-500 text-white text-base sm:text-lg lg:text-xl font-semibold 
+         px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl sm:rounded-3xl
+         hover:bg-blue-600 transition-all duration-200
+         focus:outline-none focus:ring-2 focus:ring-blue-500 ;
+}
+
+/* Container utilities */
+.responsive-container {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.responsive-grid {
+  @apply grid gap-4 sm:gap-6 
+         grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.responsive-card {
+  @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow
+         p-4 sm:p-6;
+}} */
+@import "tailwindcss";
+
+/* in your styles.css or global.css */
+/* original compact styles preserved while keeping the sliding animation layers */
+
+/* INACTIVE BUTTON STATE (matches original: p-3, flex, items-center, gap-2, rounded-lg, text-xl, font-semibold, hover:bg-gray-100) */
+.sidebar-button {
+  @apply p-3 flex items-center gap-2 text-xl font-semibold relative overflow-hidden transition-all duration-300 z-10;
+  /* Text & hover fallback */
+  @apply text-gray-700 hover:text-gray-900 hover:bg-gray-100;
+  /* Keep background transparent by default so pseudo layers show through */
+  @apply bg-transparent;
+  /* Accessibility focus ring */
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+/* Static base background layer (acts like ::after) */
+.sidebar-button::after {
+  content: '';
+  @apply absolute inset-0  bg-transparent z-[-2];
+}
+
+/* Sliding hover layer (acts like ::before) - starts at w-0 and expands to full width */
+.sidebar-button::before {
+  content: '';
+  @apply absolute left-0 top-0 h-full w-0  bg-gray-200 transition-all duration-300 z-[-1];
+}
+
+/* Expand sliding layer on hover (animated) */
+.sidebar-button:hover::before {
+  @apply w-full;
+}
+
+/* ACTIVE STATE (matches original active bg and layout) */
+.sidebar-button-active {
+  @apply p-3 flex items-center gap-2 text-xl font-semibold  bg-blue-500 text-white transition-all duration-300 z-10;
+  @apply shadow-sm;
+}
+
+/* Remove pseudo layers for active button to avoid double visuals */
+.sidebar-button-active::before,
+.sidebar-button-active::after {
+  content: none;
+}
+
+.Dashboard {
+  @apply bg-gray-100 w-screen h-auto p-8 my-3 mr-10 inset-shadow-sm rounded-lg;
+}
+.regular-button {
+  @apply bg-blue-500 text-white text-xl font-semibold px-5 py-2 rounded-xl  inset-y-0  pr-3  hover:bg-blue-600 transition duration-300 ease-in-out;
+}

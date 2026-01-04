@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { ClerkProvider } from '@clerk/clerk-react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './Components/Home'
 import StudyDesk from './Components/StudyDesk'
@@ -12,7 +13,7 @@ import Settings from './Components/Settings.jsx'
 import NotFound from './Components/NotFound'
 import Login from './Components/Login.jsx'
 import RequireAuth from './Components/RequireAuth'
-import { AuthProvider } from './context/AuthContext'
+import { AuthProvider } from './hooks/AuthContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,11 +34,24 @@ const router = createBrowserRouter([
   },
   { path: '*', element: <NotFound /> },
 ])
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!PUBLISHABLE_KEY) {
+  console.warn('Missing Publishable Key - ClerkProvider will not be used')
+}
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    {PUBLISHABLE_KEY ? (
+      <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </ClerkProvider>
+    ) : (
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    )}
   </StrictMode>,
 )
